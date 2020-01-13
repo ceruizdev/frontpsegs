@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="m-5" style="display: block;margin:0 auto;text-align: center;">
+        <div>
+            <p>ANTES DE REALIZAR SU PAGO, FAVOR VERIFICAR LA SIGUIENTE INFORMACIÓN:</p>
+           
+            <div>
+                <h5>Datos personales</h5>
+                <div class="container">
+                    <div class="grid-container">
+                        <p class="datosPesona">IDENTIFICACIÓN CLIENTE:</p>
+                        <p class="grid-item">{{resumen.usuario.nro_doc_tomador}}</p>
+                        <p class="datosPesona">NOMBRE COMPLETO:</p>
+                        <p class="grid-item">{{resumen.usuario.txt_nombre}} {{resumen.usuario.txt_apellido}}</p>
+                        <p class="datosPesona">EMAIL:</p>
+                        <p class="grid-item">{{resumen.usuario.txt_mail_cliente}}</p>
+                        <p class="datosPesona">TELEFONO:</p>
+                        <p class="grid-item">{{resumen.usuario.txt_telefono}}</p>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <h5>Información sobre el pago total de las facturas</h5>
+                    <div class="grid-container">
+                        <p class="datosPesona">IDENTIFICACIÓN DEL PAGO:</p>
+                        <div>
+                            <p *ngFor="let pago of resumen.pagos" class="grid-item">{{pago.idPago}}</p>
+                        </div>
+                        <p class="datosPesona">CONCEPTO:</p>
+                        <p class="grid-item">{{resumen.detallePago.concepto | uppercase }}</p>
+                        <!--<p class="datosPesona">IVA:</p>
+                        <p class="grid-item">$ {{ 0 }}</p>-->
+                        <p class="datosPesona">TOTAL CON IVA:</p>
+                        <p class="grid-item">$ {{resumen.detallePago.totalPagar | number }}</p>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container m-5">
+        <div class="left"> 
+            <button type="submit" class="btn btn-outline">
+                <i class="fas fa-arrow-circle-left"></i> Regresar
+            </button>
+        </div>
+        <div class="container right"> 
+            <button type="submit" class="btn btn-outline-primary">
+                Pagar
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+.datosPesona {
+  background: #00347d;
+  color: #fff;
+  padding: 10px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+.grid-item {
+  background-color: rgba(184, 184, 184, 0.8);
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+.right{
+    display: inline-block;
+    text-align: right;
+    width:50%;
+}
+.left{
+    display: inline-block;
+    text-align: left;
+    width:50%;
+}
+
+
+.btn-outline-primary{
+    border: 1px solid #00347D;
+    color: #00347D;
+}
+
+.btn-outline-primary:hover{
+    opacity: 1;
+    background-color: #00347D;
+    color:#fff;
+}

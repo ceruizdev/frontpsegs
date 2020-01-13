@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="m-5">
+        <div>
+            <div>
+                <div>
+                    <div class="grid-container">
+                        <p class="datosPesona">IDENTIFICACIÓN CLIENTE:</p>
+                        <p class="grid-item">{{ usuario.nro_doc_tomador }}</p>
+                        <p class="datosPesona">CONCEPTO:</p>
+                        <p class="grid-item">{{ pago[0].concepto | uppercase }}</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="grid-container">
+                        <p class="datosPesona">NOMBRE(S):</p>
+                        <p class="grid-item">{{ usuario.txt_nombre | uppercase }}</p>
+                        <p class="datosPesona">APELLIDO(S):</p>
+                        <p class="grid-item">{{ usuario.txt_apellido | uppercase }}</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="grid-container">
+                        <p class="datosPesona">EMAIL:</p>
+                        <p class="grid-item">{{ usuario.txt_mail_cliente | uppercase }}</p>
+                        <p class="datosPesona">TELEFONO:</p>
+                        <p class="grid-item">{{ usuario.txt_telefono }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<app-informacion-personal [usuario]="usuario" [pago]="datos" *ngIf="datos != undefined"></app-informacion-personal>
+<div class="container">
+    <div class="m-5">
+        <div>
+            <form (ngSubmit)="generarPago()" *ngIf="datos != undefined" ngNativeValidate>
+                <table class="table table-hover wrapper_pagos">
+                    <thead>
+                        <tr class="tableHeader">
+                            <th scope="col">Id Pago</th>
+                            <th scope="col">Identificación cliente</th>
+                            <th scope="col">Total a Pagar</th>
+                            <!--<th scope="col">Total IVA</th>-->
+                            <th scope="col">Nombre(s)</th>
+                            <th scope="col">Apellido(s)</th>
+                            <th scope="col">Vencimiento</th>
+                            <th scope="col">Valor a Pagar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let pago of datos; let i = index" class="center">
+                            <td>{{pago.id_referencia}}</td>
+                            <td>{{pago.nro_doc_tomador}}</td>
+                            <td>$ {{pago.imp_cuota | number  }}</td>
+                            <!--<td>$ {{pago.imp_iva | number }}</td>-->
+                            <td>{{usuario.txt_nombre}}</td>
+                            <td>{{usuario.txt_apellido}}</td>
+                            <td>{{pago.fec_limite_pago }}</td>
+                            <td>
+                                <div class="custom-control custom-checkbox center" *ngIf="pago.sn_fecRequerida==='true'">
+                                    <input type="checkbox" class="custom-control-input" id={{pago.id_referencia}}
+                                        (change)="addPago(pago, $event.target.checked)" required>
+                                    <label class="custom-control-label" for={{pago.id_referencia}}></label>
+                                </div>
+                                <div class="custom-control custom-checkbox center" *ngIf="pago.sn_fecRequerida==='false'">
+                                    <input type="checkbox" class="custom-control-input" id={{pago.id_referencia}}
+                                        (change)="addPago(pago, $event.target.checked)">
+                                    <label class="custom-control-label" for={{pago.id_referencia}}></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <!--<td></td>-->
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="tableHeader center"> Total:</td>
+                            <td class="center">$ {{mostrarMilecimas( valorTotal$ | async )}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="container m-5">
+                    <div class="left">
+                        <button type="button" class="btn btn-outline-danger">
+                            Cerrar
+                        </button>
+                    </div>
+                    <div class="right">
+                        <button type="submit" class="btn btn-outline-primary">
+                            Continuar
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+                <p style="color: white">Cargando..</p>
+            </ngx-spinner>
+        </div>
+    </div>
+</div>

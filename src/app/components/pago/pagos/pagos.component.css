@@ -1,0 +1,43 @@
+.tableHeader{
+    background:#00347D;
+    color:#fff;
+    white-space: nowrap;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 10px 0;
+}
+.center{
+    margin: 0 auto;
+    text-align: center;
+}  
+td,th {
+    padding: 10px ;
+}
+tr{
+    margin: 0 auto;
+    align-items: center;
+}
+.right{
+    display: inline-block;
+    text-align: right;
+    width:50%;
+}
+.left{
+    display: inline-block;
+    text-align: left;
+    width:50%;
+}
+
+
+.btn-outline-primary{
+    border: 1px solid #00347D;
+    color: #00347D;
+}
+
+.btn-outline-primary:hover{
+    opacity: 1;
+    background-color: #00347D;
+    color:#fff;
+}

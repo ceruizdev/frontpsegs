@@ -1,0 +1,12 @@
+.header_wrapper{
+    margin-top: 50px;
+}
+.header_band{
+    background: #00347D;
+    padding: 40px 0px;
+    color: #fff;
+}
+.right{
+    text-align: right;
+    vertical-align: middle;
+}
